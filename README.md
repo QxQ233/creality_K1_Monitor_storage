@@ -42,6 +42,7 @@
    ```ini
    [Camera]
    ip = 10.0.0.21
+   #以上修改为自己打印机的ip
    port = 8080
    path = /?action=stream
    
@@ -53,6 +54,7 @@
    [Storage]
    max_days = 7
    max_files = 100
+   
    ```
 4. 启动监控
    ```bash
@@ -67,11 +69,14 @@
    cd ./creality_K1_Monitor_storage
    
    docker build -t creality-monitor .
+
    docker run -d --name creality-monitor --restart unless-stopped \
      -v /path/to/videos:/data \
      -e CAMERA_IP=10.0.0.21 \
      -e WS_URL=ws://10.0.0.21:9999 \
      creality-monitor
+
+   #将以上ip修改为自己打印机ip
    ```
 
 ## 配置说明
