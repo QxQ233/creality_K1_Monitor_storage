@@ -27,7 +27,7 @@
 ### 本地运行
 1. 克隆仓库
    ```bash
-   [git clone https://github.com/your-repo/creality_K1_Monitor_storage.git](https://github.com/QxQ233/creality_K1_Monitor_storage.git)
+   git clone https://github.com/QxQ233/creality_K1_Monitor_storage.git
    cd creality_K1_Monitor_storage
    ```
 
