@@ -1,6 +1,7 @@
 # Creality K1 3D打印机监控系统
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+- 本项目由AI协助开发
 
 一个用于监控Creality K1 3D打印机状态并自动录制打印过程的解决方案。
 
