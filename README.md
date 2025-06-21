@@ -25,11 +25,11 @@
 
 ## 快速开始
 
-### 本地运行
+### Windos本地运行
 1. 克隆仓库
    ```bash
    git clone https://github.com/QxQ233/creality_K1_Monitor_storage.git
-   cd creality_K1_Monitor_storage
+   cd ./creality_K1_Monitor_storage
    ```
 
 2. 安装依赖
@@ -42,8 +42,28 @@
    python creality_K1_Monitor_storage.py
    ```
 
+### 配置文件
+编辑`config.ini`可覆盖环境变量：
+```ini
+[Camera]
+ip = 10.0.0.21
+port = 8080
+path = /?action=stream
+
+[Video]
+codec = XVID
+fps = 15
+max_duration = 3600
+
+[Storage]
+max_days = 7
+max_files = 100
+```
+
 ### Docker部署
 ```bash
+git clone https://github.com/QxQ233/creality_K1_Monitor_storage.git
+cd ./creality_K1_Monitor_storage
 docker build -t creality-monitor .
 docker run -d --name creality-monitor --restart unless-stopped \
   -v /path/to/videos:/data \
@@ -65,24 +85,6 @@ docker run -d --name creality-monitor --restart unless-stopped \
 | MAX_DURATION | 3600 | 最大录制时长(秒) |
 | MAX_DAYS | 7 | 视频保留天数 |
 | MAX_FILES | 20 | 每个文件夹最大文件数 |
-
-### 配置文件
-编辑`config.ini`可覆盖环境变量：
-```ini
-[Camera]
-ip = 10.0.0.21
-port = 8080
-path = /?action=stream
-
-[Video]
-codec = XVID
-fps = 15
-max_duration = 3600
-
-[Storage]
-max_days = 7
-max_files = 100
-```
 
 ## 开发指南
 
