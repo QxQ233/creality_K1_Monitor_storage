@@ -68,13 +68,15 @@
    
    cd ./creality_K1_Monitor_storage
    
-   docker build -t creality-monitor .
+   sudo docker build -t creality-monitor .
 
-   docker run -d --name creality-monitor --restart unless-stopped \
+   sudo docker run -d --name creality-monitor --restart unless-stopped \
      -v /path/to/videos:/data \
      -e CAMERA_IP=10.0.0.21 \
      -e WS_URL=ws://10.0.0.21:9999 \
+     -e TZ=Asia/Shanghai \
      creality-monitor
+
 
    #将以上ip修改为自己打印机ip
    ```
